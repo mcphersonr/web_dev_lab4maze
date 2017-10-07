@@ -14,7 +14,7 @@ window.onload= function(){
             other[i].classList.add("youlose");
         });
         other[i].addEventListener("mouseout",function(){
-          other[i].classList.add("youlose");
-        })
+          other[i].classList.remove("youlose");
+        });
     }
 }
