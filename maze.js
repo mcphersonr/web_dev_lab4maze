@@ -1,20 +1,31 @@
 window.onload= function(){
+    let hitcount=0;
     let lose = document.getElementById("boundary1");
     lose.addEventListener("mouseover", function(){
         lose.classList.add("youlose");
+        hitcount++;
+        console.log(hitcount);
     });
     lose.addEventListener("mouseout", function(){
         lose.classList.remove("youlose");
     });
     
-    let other = document.querySelectorAll(".boundary");
-    console.log(other);    
+    let otherlosses = document.querySelectorAll(".boundary");
     for(let i=1; i<5; i++){
-        other[i].addEventListener("mouseover",function(){
-            other[i].classList.add("youlose");
+        otherlosses[i].addEventListener("mouseover",function(){
+            otherlosses[i].classList.add("youlose");
+            hitcount++;
+            console.log(hitcount);
         });
-        other[i].addEventListener("mouseout",function(){
-          other[i].classList.remove("youlose");
+        otherlosses[i].addEventListener("mouseout",function(){
+          otherlosses[i].classList.remove("youlose");
         });
     }
+    
+    let end = document.getElementById("end");
+    end.addEventListener("mouseover", function (){
+        if(hitcount === 0){
+            alert("You win!");
+        }
+    });
 }
