@@ -54,7 +54,7 @@ window.onload= function(){
     
     //Displays message when the user moves the mouse over the "E"
     end.addEventListener("mouseover", function (){
-        if(hitcount === 0){
+        if(hitcount === 0 && startcount ===1){
            head.innerHTML = "YOU WIN!";
            startcount=0;
         }
