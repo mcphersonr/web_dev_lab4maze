@@ -12,6 +12,9 @@ window.onload= function(){
     //Changes the first boundary from the left to red when the mouse moves over it
     lose.addEventListener("mouseover", function(){
         lose.classList.add("youlose");
+        for(let s = 1; s<5; s++){
+            otherlosses[s].classList.add("youlose");
+        }
         hitcount++;
         head.innerHTML = "YOU LOSE!";
     });
@@ -20,6 +23,10 @@ window.onload= function(){
     for(let i=1; i<5; i++){
         otherlosses[i].addEventListener("mouseover",function(){
             otherlosses[i].classList.add("youlose");
+            let s = i+1;
+            for(s; s<5; s++){
+                otherlosses[s].classList.add("youlose");
+            }
             hitcount++;
             head.innerHTML = "YOU LOSE!";
         });
