@@ -4,6 +4,7 @@ window.onload= function(){
     let head = document.getElementById("status");
     let lose = document.getElementById("boundary1");
     let otherlosses = document.querySelectorAll(".boundary");
+    let otherbound = document.querySelectorAll(".boundary");
     let start = document.getElementById("start");
     let restart = start;
     let maze = document.getElementById("maze");
@@ -13,7 +14,7 @@ window.onload= function(){
     lose.addEventListener("mouseover", function(){
         lose.classList.add("youlose");
         for(let s = 1; s<5; s++){
-            otherlosses[s].classList.add("youlose");
+            otherbound[s].classList.add("youlose");
         }
         hitcount++;
         head.innerHTML = "YOU LOSE!";
@@ -23,9 +24,8 @@ window.onload= function(){
     for(let i=1; i<5; i++){
         otherlosses[i].addEventListener("mouseover",function(){
             otherlosses[i].classList.add("youlose");
-            let s = i+1;
-            for(s; s<5; s++){
-                otherlosses[s].classList.add("youlose");
+            for(let s=0; s<5; s++){
+                otherbound[s].classList.add("youlose");
             }
             hitcount++;
             head.innerHTML = "YOU LOSE!";
